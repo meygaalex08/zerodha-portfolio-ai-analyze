@@ -4,7 +4,7 @@ A modern web application to **upload, analyze, and receive AI-powered insights**
 
 ---
 
-## 🚀 Features
+## Features
 
 - **Easy Upload:** Upload your Zerodha portfolio CSV or Excel file.
 - **Instant Dashboard:** Instantly view a dashboard with investment, current value, P&L, and return percentages.
@@ -18,7 +18,6 @@ A modern web application to **upload, analyze, and receive AI-powered insights**
 
 - **Frontend:** React.js (with Material-UI)
 - **Backend:** Node.js & Express (serves as Gemini API proxy)
-- **CSV/Excel Parsing:** [xlsx](https://www.npmjs.com/package/xlsx)
 - **AI Engine:** Google Gemini 1.5 Flash API
 
 ---
@@ -31,11 +30,12 @@ A modern web application to **upload, analyze, and receive AI-powered insights**
 git clone https://github.com/meygaalex08/zerodha-portfolio-ai-analyze.git
 cd zerodha-portfolio-ai-analyze
 npm install
-Set up your Gemini API key:
-Obtain your API key from Google AI Studio: https://makersuite.google.com/app/apikey
+Set up your Gemini API key: Obtain your API key from Google AI Studio: https://makersuite.google.com/app/apikey
+
 In the root directory, create a .env file:
 GEMINI_API_KEY=your-gemini-api-key
-Make sure .env is listed in .gitignore.
+
+
 Start the backend server:
 node server.js
 Start the React frontend (in another terminal):
