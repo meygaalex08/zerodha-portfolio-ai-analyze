@@ -1,26 +1,35 @@
-Zerodha Portfolio AI Analyzer
+# Zerodha Portfolio AI Analyzer
 
-A modern web application to upload, analyze, and get AI-powered insights for your Zerodha (or similar) portfolio CSV or Excel file.
+A modern web application to **upload, analyze, and receive AI-powered insights** for your Zerodha (or similar) stock portfolio using a CSV or Excel file.
 
-Features
+---
 
-Upload your Zerodha portfolio CSV or Excel file
-Instantly view a dashboard with investment, value, P&L, and returns
-See all portfolio holdings in a clean, filterable table
-Get detailed, actionable insights and recommendations using Gemini AI (1.5 Flash)
-Re-upload or switch files at any time
-Tech Stack
+## 🚀 Features
 
-Frontend: React with Material-UI
-Backend: Node.js/Express (Gemini API proxy)
-CSV/Excel Parsing: xlsx
-AI Engine: Google Gemini 1.5 Flash
+- **Easy Upload:** Upload your Zerodha portfolio CSV or Excel file.
+- **Instant Dashboard:** Instantly view a dashboard with investment, current value, P&L, and return percentages.
+- **Clean Table View:** See all portfolio holdings in a clean, filterable table.
+- **AI Insights:** Get actionable AI-generated analysis and investment suggestions (powered by Gemini AI 1.5 Flash).
+- **Flexible:** Re-upload or switch files at any time.
 
-Getting Started
+---
 
-Clone the repository and install dependencies:
-git clone https://github.com/yourusername/zerodha-portfolio-ai.git
-cd zerodha-portfolio-ai
+## Tech Stack
+
+- **Frontend:** React.js (with Material-UI)
+- **Backend:** Node.js & Express (serves as Gemini API proxy)
+- **CSV/Excel Parsing:** [xlsx](https://www.npmjs.com/package/xlsx)
+- **AI Engine:** Google Gemini 1.5 Flash API
+
+---
+
+## Getting Started
+
+### 1. **Clone the Repository**
+
+```sh
+git clone https://github.com/meygaalex08/zerodha-portfolio-ai-analyze.git
+cd zerodha-portfolio-ai-analyze
 npm install
 Set up your Gemini API key:
 Obtain your API key from Google AI Studio: https://makersuite.google.com/app/apikey
@@ -31,3 +40,4 @@ Start the backend server:
 node server.js
 Start the React frontend (in another terminal):
 npm start
+```
