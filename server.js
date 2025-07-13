@@ -35,12 +35,10 @@ Rows: ${JSON.stringify(rows)}
 Your answer should be clear, concise, and actionable.
 `;
 
-    // Use latest Gemini model and SDK method
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"}); // Or "gemini-1.5-pro" if you have access
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
     const result = await model.generateContent(prompt);
 
       const insight = result.response.candidates?.[0]?.content?.parts?.[0]?.text || "No insight generated.";
-      console.log("INSIGHTS", insight)
     res.json({ insights: insight });
     
 
