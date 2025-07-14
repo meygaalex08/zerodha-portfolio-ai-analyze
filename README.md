@@ -1,7 +1,7 @@
 # Zerodha Portfolio AI Analyzer
 
 A modern web application to **upload, analyze, and receive AI-powered insights** for your Zerodha (or similar) stock portfolio using a CSV or Excel file.
-![alt text](image.png)
+<img width="3008" height="1558" alt="image" src="https://github.com/user-attachments/assets/46b435f1-1c31-436a-b938-3f8277daebfb" />
 
 ---
 
