@@ -18,7 +18,7 @@ A modern web application to **upload, analyze, and receive AI-powered insights**
 ## Tech Stack
 
 - **Frontend:** React.js (with Material-UI)
-- **Backend:** Node.js & Express (serves as Gemini API proxy)
+- **Backend:** Node.js & Express 
 - **AI Engine:** Google Gemini 1.5 Flash API
 
 ---
