@@ -1,7 +1,6 @@
 import { useState } from "react";
 import * as XLSX from "xlsx";
-import { Box, Button, Typography, CircularProgress } from "@mui/material";
-import InsightsIcon from '@mui/icons-material/AutoGraphRounded';
+import "./App.css";
 
 import Header from "./Header";
 import UploadSection from "./UploadSection";
@@ -10,7 +9,6 @@ import PortfolioTable from "./PortfolioTable";
 import AIInsightsDrawer from "./AIInsightsDrawer";
 
 import { calculateSummary, formatINR } from "./utils/portfolioHelpers";
-
 
 export default function App() {
   const [headers, setHeaders] = useState([]);
@@ -73,22 +71,23 @@ export default function App() {
     setLoading(false);
   };
 
-  const { totalInvested, totalCurVal, totalPnl, totalReturn } = calculateSummary(headers, rows);
+  const { totalInvested, totalCurVal, totalPnl, totalReturn } =
+    calculateSummary(headers, rows);
 
   return (
-    <Box sx={{ bgcolor: "#f5f6fa", minHeight: "100vh" }}>
+    <div className="app">
       <Header />
 
       {!fileName || uploading ? (
         <UploadSection uploading={uploading} handleFileUpload={handleFileUpload} />
       ) : (
-        <Box sx={{ maxWidth: 1100, mx: "auto", pt: 5, px: 2 }}>
-          <Typography sx={{ mb: 2, color: "text.secondary" }}>
+        <div className="container">
+          <p className="file-info">
             <strong>Loaded file:</strong> {fileName}
-            <Button onClick={handleReupload} sx={{ ml: 2 }} color="secondary" size="small">
+            <button className="btn secondary small" onClick={handleReupload}>
               Upload Different File
-            </Button>
-          </Typography>
+            </button>
+          </p>
 
           <Dashboard
             invested={totalInvested}
@@ -100,25 +99,21 @@ export default function App() {
 
           <PortfolioTable headers={headers} rows={rows} />
 
-          <Box sx={{ textAlign: "right", mb: 3 }}>
-            <Button
-              variant="contained"
-              color="secondary"
-              size="large"
-              sx={{ bgcolor: "#9d4edd" }}
-              endIcon={<InsightsIcon />}
+          <div className="actions">
+            <button
+              className={`btn primary large ${loading ? "loading" : ""}`}
               onClick={getAIInsights}
               disabled={loading}
             >
-              {loading ? (
-                <>
-                  <CircularProgress size={22} sx={{ mr: 1 }} />Generating Insights...
-                </>
-              ) : (
-                "Get AI Insights"
-              )}
-            </Button>
-          </Box>
+              {loading ? "Generating Insights..." : "Get AI Insights"}
+            </button>
+          </div>
+
+          {insights.startsWith("AI Error") && (
+            <div className="error">
+              <strong>AI Error:</strong> {insights}
+            </div>
+          )}
 
           <AIInsightsDrawer
             open={drawerOpen}
@@ -126,8 +121,8 @@ export default function App() {
             loading={loading}
             insights={insights}
           />
-        </Box>
+        </div>
       )}
-    </Box>
+    </div>
   );
 }
