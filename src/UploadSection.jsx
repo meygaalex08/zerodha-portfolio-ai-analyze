@@ -12,7 +12,7 @@ export default function UploadSection({ uploading, handleFileUpload }) {
         {uploading ? (
           <div className="upload-spinner">Loading...</div>
         ) : (
-          <label htmlFor="upload-portfolio" className="upload-btn">
+          <label className="upload-btn">
             <input
               accept=".csv,.xlsx"
               id="upload-portfolio"

@@ -1,4 +1,3 @@
-import React from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
@@ -11,7 +10,7 @@ export default function AIInsightsDrawer({ open, onClose, loading, insights }) {
       </div>
 
       <div className="drawer-content">
-        {loading && <div className="spinner">Loading...</div>}
+        {loading && <div className="spinner">Loading Insights...</div>}
 
         {!loading && insights && (
           <div className="insights-box">
@@ -19,12 +18,6 @@ export default function AIInsightsDrawer({ open, onClose, loading, insights }) {
               {insights}
             </ReactMarkdown>
           </div>
-        )}
-
-        {!loading && !insights && (
-          <p className="placeholder">
-            Click <strong>Get AI Insights</strong> to see portfolio analysis here.
-          </p>
         )}
       </div>
     </div>

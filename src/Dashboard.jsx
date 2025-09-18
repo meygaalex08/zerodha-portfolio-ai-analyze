@@ -29,7 +29,7 @@ export default function Dashboard({ invested, curVal, pnl, returnPct }) {
           gradient="linear-gradient(90deg, #fcf6e6 0,#fdebe7 100%)"
         />
         <SummaryCard
-          icon="％"
+          icon="%"
           label="Total Return"
           value={`${returnPct.toFixed(2)}%`}
           color="#20c997"

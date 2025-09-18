@@ -5,7 +5,7 @@ export function formatINR(number) {
       style: "currency",
       currency: "INR",
       maximumFractionDigits: 0,
-    }) ?? "-";
+    });
   }
   
   export function calculateSummary(headers, rows) {
