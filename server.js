@@ -47,4 +47,10 @@ Your answer should be clear, concise, and actionable.
   }
 });
 
-app.listen(5050, () => console.log("Server running on 5050"));
+app.use(express.static(path.join(__dirname, 'build')));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => console.log("Server running on " + PORT));
